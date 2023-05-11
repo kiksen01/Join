@@ -1,0 +1,52 @@
+/* === Global === */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+    
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+html {
+    font-size: 62.5%;
+}
+    
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+}
+  
+.flex-row {
+    display: flex;
+}
+  
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+  
+.flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+  
+.grid {
+    display: grid;
+    place-items: center;
+}
+  
+.curser {
+    cursor: pointer;
+}
+  
+.box-shadow {
+    box-shadow: -2px 0 6px 0 rgba(31, 23, 23, 0.1);
+}
+  
+.d-none {
+    display: none;
+}

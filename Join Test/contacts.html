@@ -1,18 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-    <title>Join</title>
+    <link rel="stylesheet" href="./src/css/fonts.css">
+    <link rel="stylesheet" href="./src/css/settings.css">
+    <link rel="stylesheet" href="./src/css/global.css">
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="./src/css/mqueries.css">
+    <script src="./src/js/settings.js"></script>
+    <script src="./src/js/templates.js"></script>
+    <script src="./src/js/contacts.js"></script>
+    <script src="./src/js/script.js"></script>
+    <title>Join - Contacts</title>
 </head>
+
 <body onload="includeHTML()">
-    <div class="header-includer" w3-include-html="templates/header.html"></div>
-    <div class="sidebar-includer"  w3-include-html="templates/sidebar.html"></div>
+
+    <div class="header-includer" w3-include-html="src/templates/header.html"></div>
+    <div class="sidebar-includer" w3-include-html="src/templates/sidebar.html"></div>
+
+    <section id="contacts" class="flex-row">
+        <article id="contactList">
+            <div id="listContainer">
+                <div class="contactGroup">
+                    <div class="letter"></div>
+                    <div class="horizontalLine"></div>
+                    <div class="contactSubList">
+                        <div class="contact"></div>
+                    </div>
+                </div>
+            </div>
+        </article>
+        <article id="contactInfo">
+            <div class="sectionHeader">
+                <span>Contacts</span>
+                <div class="verticalLine"></div>
+                <span>Better with a team</span>
+            </div>
+            <div id="contactInfoContainer">
+                <div id="contactNameContainer">
+                    <div class="contactInitials"></div>
+                    <div id="contactName">
+                        <span></span>
+                        <a></a>
+                    </div>
+                </div>
+                <div id="contactInformation">
+                    <span>Contact Information</span>
+                    <a></a>
+                </div>
+                <div class="information">
+                    <span>Email</span>
+                    <span></span>
+                </div>
+                <div class="information">
+                    <span>Phone</span>
+                    <span></span>
+                </div>
+            </div>
+            <button></button>
+        </article>
+    </section>
 </body>
+
 </html>

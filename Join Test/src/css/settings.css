@@ -1,0 +1,31 @@
+/* === Settings === */
+:root {
+    /* Colors */
+    --black-color: #000000;
+    --white-color: #ffffff; /*Background Header*/
+    --white2-color: #f6f7f8; /*Background Body*/
+    --red-color: #ff3d00; /*Prio urgent*/
+    --lightOrange-color: #ffc350; /*Prio medium*/
+    --lightGreen-color: #02cf2f; /*Prio low*/
+    --darkBlue-color: #2a3647; /*Menu*/
+    --darkBlue2-color: #091931; /*Menu active*/
+    /*Category add Task*/
+    --darkGreen-color: #4e963d;
+    --turquoise-color: #1fd7c1;
+    --lightBlue-color: #0190e0;
+    --pink-color: #fc71ff;
+    --purple-color: #9327ff;
+    --orange-color: #ff7a00;
+    
+    /* Font-Size */
+    --font-size-12: 12px;
+    --font-size-14: 14px;
+    --font-size-16: 16px;
+    --font-size-21: 21px;
+    --font-size-23: 23px;
+    --font-size-27: 27px;
+    --font-size-36: 36px;
+    --font-size-47: 47px;
+    --font-size-61: 61px;
+    --font-size-64: 64px;
+  }
