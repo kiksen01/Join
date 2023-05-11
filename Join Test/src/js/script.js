@@ -21,4 +21,28 @@ function includeHTML() {
             return;
         }
     }
+    getActiveLink();
+}
+
+function getActiveLink() {
+    if(window.location.href.indexOf("summary") > -1){
+        var element = document.getElementById("summaryLink");
+        element.classList.add("active");
+    }
+    if(window.location.href.indexOf("board") > -1){
+        var element = document.getElementById("boardLink");
+        element.classList.add("active");
+    }
+    if(window.location.href.indexOf("add-task") > -1){
+        var element = document.getElementById("addTaskLink");
+        element.classList.add("active");
+    }
+    if(window.location.href.indexOf("contacts") > -1){
+        var element = document.getElementById("contactsLink");
+        element.classList.add("active");
+    }
+    if(window.location.href.indexOf("legal-notice") > -1){
+        var element = document.getElementById("legalNoticeLink");
+        element.classList.add("active");
+    }
 }

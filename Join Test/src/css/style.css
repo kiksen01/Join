@@ -1,8 +1,6 @@
 /* Header */
 
 .header {
-    display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     position: absolute;
@@ -10,8 +8,7 @@
     height: 89px;
     left: 0px;
     top: 0px;
-    background: #FFFFFF;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+    background-color: var(--white-color);
 }
 
 .header-left {
@@ -20,45 +17,27 @@
 
 .header-right {
     padding-right: 36px;
-    display: flex;
     gap: 20px;
 }
 
 .header-text {
-    font-style: normal;
+    font-size: var(--font-size-21);
     font-weight: 400;
-    font-size: 21px;
 }
-
-.cursor {
-    cursor: pointer;
-}
-
-/* Header */
-
-
-
 
 /* Menu (Sidemenu) */
 
 .side-bar {
-    display: flex;
-    flex-direction: column;
+    width: 232px;
+    height: 100vh;
     align-items: center;
     justify-content: space-around;
     position: fixed;
-    width: 232px;
-    height: 100vh;
     left: 0px;
     top: 0px;
-    background: #2A3647;
+    background-color: var(--darkBlue-color);
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.1);
     border-radius: 0px;
-}
-
-.link-container {
-    display: flex;
-    flex-direction: column;
 }
 
 .join-logo-pic {
@@ -69,34 +48,25 @@
 
 .side-bar a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: var(--white-color);
 }
 
 .side-bar-link {
-    box-sizing: border-box;
-    align-items: center;
-    display: flex;
     width: 232px;
     height: 60px;
+    align-items: center;
     gap: 20px;
-    justify-content: flex-start;
     padding-left: 40px;
-    font-size: 16px;
-}
-
-.side-bar-link:hover {
-    background: #091931;
+    font-size: var(--font-size-16);
 }
 
 .link-img {
     width: 22px;
 }
 
-
-/* Menu (Sidemenu) */
-
-
-
+.active {
+    background-color: var(--darkBlue2-color);
+}
 
 
 /* Add Task*/
@@ -230,9 +200,8 @@
     word-break: break-all;
 }
 
-/* Add Task*/
-
 /*Contacts*/
+
 #contacts {
     padding: 8.9rem 0 0 23.2rem;
     width: 100%;
