@@ -68,6 +68,58 @@
     background-color: var(--darkBlue2-color);
 }
 
+/* Board-Start*/
+
+#board-content {
+    margin-top: 120px;
+    margin-left: 280px;
+    overflow-y: scroll;
+    min-width: 550px;
+}
+
+#board-header {
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#board-header h1 {
+    font-weight: bolder;
+    font-size: 60px;
+}
+
+#search-and-add{
+    margin-right: 16px;
+}
+
+#search-task{
+    border-radius: 15px;
+    height: 50px;
+    width: 300px;
+    padding: 8px;
+    margin: 8px;
+    border: 1px solid #a8a8a8;
+}
+
+#add-task-button {
+    border-radius: 15px;
+    height: 50px;
+    width: 150px;
+    margin: 8px;
+    padding: 8px;
+    border: none;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+
+#tasks-container {
+    padding: 16px;
+}
+
+/* Board-End*/
+
 
 /* Add Task*/
 

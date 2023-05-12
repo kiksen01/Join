@@ -22,6 +22,40 @@
     <div class="header-includer" w3-include-html="src/templates/header.html"></div>
     <div class="sidebar-includer" w3-include-html="src/templates/sidebar.html"></div>
 
+    <div class="* flex-column" id="board-content">
+        <div class="flex-row" id="board-header">
+            <h1>Board</h1>
+            <div id="search-and-add">
+                <input id="search-task" placeholder="Find Task" type="text">
+                <button id="add-task-button" class="button">Add task <img src="./src/img/plus.svg"></button>
+            </div>
+
+        </div>
+
+        <div class="flex-row" id="tasks-container">
+           <div class="task-container" id="board-to-do">
+                <div>
+                    <h2>To do</h2>
+                    <div id="board-add-btn">
+                        <img src="./src/img/add-task-icon.svg">
+                    </div>
+                </div>
+           </div>
+
+           <div class="task-container" id="board-in-progress">
+            
+           </div>
+
+           <div class="task-container" id="board-awaiting-fb">
+            
+           </div>
+
+           <div class="task-container" id="board-task-done">
+            
+           </div>
+    </div>
+
+
 </body>
 
 </html>
