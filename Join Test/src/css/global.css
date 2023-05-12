@@ -50,3 +50,7 @@ body {
 .d-none {
     display: none;
 }
+
+.blueFont {
+    color: #007CEE;
+}
