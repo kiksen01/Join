@@ -148,3 +148,7 @@ function getRandomInt (min, max) { // Generiert zufällige Zahl von 0 bis 255
     max = Math.floor(max); // Runded immer ab und gibt Ganzzahl zurück
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
+
+window.addEventListener('load', function() {
+    deSVG('.editContactImg', true);
+});

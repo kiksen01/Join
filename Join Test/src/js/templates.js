@@ -1,11 +1,11 @@
-function createContactGroup(charLowCase, charUpperCase) {
+function createContactGroup(charLowCase, charUpperCase) { // Container-Template für Kontaktunterliste
     return `<div class="contactGroup flex-column">
     <div class="letter flex-row">${charUpperCase}</div>
     <div class="horizontalLine"></div>
     <div id="group${charLowCase}" class="contactSubList flex-column"></div></div>`;
 }
 
-function createContact(x, y, name, email, id) {
+function createContact(x, y, name, email, id) { // Kontakt-Template
     return `<div class="contact flex-row curser" onclick="openContactInfo(${id})">
     <div id="contactInitials${id}" class="contactInitials grid">${x}${y}</div>
     <div class="contactName flex-column">

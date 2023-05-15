@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="src/css/global.css">
     <link rel="stylesheet" href="src/css/style.css">
     <link rel="stylesheet" href="src/css/mqueries.css">
+    <script src="//cdn.jsdelivr.net/npm/desvg@1.0.2/desvg.min.js"></script>
     <script src="src/js/settings.js"></script>
     <script src="src/js/templates.js"></script>
     <script src="src/js/contacts.js"></script>
@@ -50,11 +51,7 @@
                 <div id="contactInformation" class="flex-row">
                     <span>Contact Information</span>
                     <a class="flex-row curser" onclick="">
-                        <img src="src/img/group8.png" alt="">
-                        <!-- <div id="group8">
-                            <div id="vector7"></div>
-                            <div id="vector6"></div>
-                        </div> -->
+                        <img class="editContactImg" src="src/img/group8.svg" alt="">
                         <span>Edit Contact</span>
                     </a>
                 </div>
@@ -95,9 +92,10 @@
                     </div>
                 </div>
                 <div class="contactOptionButtons flex-row">
-                    <button class="buttonOption1 flex-row curser" onclick="closeContactMenu()">Cancel<i
+                    <button class="buttonOption1 flex-row curser" onclick="closeContactMenu()" type="button">Cancel<i
                             class='bx bx-x'></i></button>
-                    <button class="buttonOption2 flex-row curser">Create contact<i class='bx bx-check'></i></button>
+                    <button class="buttonOption2 flex-row curser" type="button">Create contact<i
+                            class='bx bx-check'></i></button>
                 </div>
             </form>
         </div>
