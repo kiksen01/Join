@@ -89,24 +89,61 @@ function getInitial(id) {
     return `${charFirstname}${charLastname}`;
 }
 
-function openAddContactMenu() { // Blendet Add-Contact Fenster ein
+function openContactMenu() { // Blendet Add-Contact Fenster ein
     document.getElementById('partitionWindow').classList.remove('d-none');
     document.getElementById('contactOptionWindow').style.transform = 'translateX(0)';
 }
 
-function closeAddContactMenu() { // Blendet Add-Contact Fenster aus
+function closeContactMenu() { // Blendet Add-Contact Fenster aus
     document.getElementById('contactOptionWindow').style.transform = 'translateX(150%)';
     document.getElementById('partitionWindow').classList.add('d-none');
 }
 
-function createRandomRGBColor() {
+function addContact() { // Fügt neuen Kontakt in Kontaktliste hinzu
+    let newContact = createNewContact();
+    contacts.push(newContact);
+    closeAddContactMenu();
+    clearContactMenu()
+    loadContacts();
+    openContactInfo(newContact['id']);
+}
+
+function createNewContact() {
+    let id = getIdForNewContact(); // Generiert neue Id
+    let name = document.getElementById('contactNameInput').value;
+    let email = document.getElementById('contactEmailInput').value;
+    let phone = document.getElementById('contactPhoneInput').value;
+    let color = createRandomRGBColor();
+    let newContact = {
+        'id' : id,
+        'name' : name,
+        'email' : email,
+        'phone' : phone,
+        'color' : color
+    };
+    return newContact;
+}
+
+function clearContactMenu() {
+    document.getElementById('contactNameInput').value = '';
+    document.getElementById('contactEmailInput').value = '';;
+    document.getElementById('contactPhoneInput').value = '';;
+}
+
+function getIdForNewContact() {
+    let lastId = contacts[contacts.length - 1]['id'];
+    lastId++;
+    return lastId;
+}
+
+function createRandomRGBColor() { // Generiert zufällige RGB-Color
     let red = getRandomInt(0, 255);
     let green = getRandomInt(0, 255);
     let blue = getRandomInt(0, 255);
     return `rgb(${red}, ${green}, ${blue})`;
 }
   
-function getRandomInt (min, max) {
+function getRandomInt (min, max) { // Generiert zufällige Zahl von 0 bis 255
     min = Math.ceil(min); // Runded immer auf und gibt Ganzzahl zurück
     max = Math.floor(max); // Runded immer ab und gibt Ganzzahl zurück
     return Math.floor(Math.random() * (max - min + 1) + min);

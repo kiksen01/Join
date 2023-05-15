@@ -49,7 +49,7 @@
                 </div>
                 <div id="contactInformation" class="flex-row">
                     <span>Contact Information</span>
-                    <a class="flex-row curser">
+                    <a class="flex-row curser" onclick="">
                         <img src="src/img/group8.png" alt="">
                         <!-- <div id="group8">
                             <div id="vector7"></div>
@@ -68,10 +68,10 @@
                 </div>
             </div>
         </article>
-        <button class="flex-row curser" onclick="openAddContactMenu()">New contact<img src="src/img/newContact.png"
+        <button class="flex-row curser" onclick="openContactMenu()">New contact<img src="src/img/newContact.png"
                 alt=""></button>
     </section>
-    <div id="contactOptionWindow" class="flex-row">
+    <div id="contactOptionWindow" class="flex-row box-shadow">
         <div class="contactOptionContainer flex-column">
             <img src="src/img/join-logo.svg" alt="">
             <span id="contactOption">Add contact</span>
@@ -79,22 +79,23 @@
             <div class="contactOptionHorizontalLine"></div>
         </div>
         <div class="contactOptionInputContainer flex-row">
-            <i class='bx bx-x curser' onclick="closeAddContactMenu()"></i>
+            <i class='bx bx-x curser' onclick="closeContactMenu()"></i>
             <img src="src/img/group 13.png" alt="">
-            <form class="flex-column" onsubmit="return false;">
+            <form class="flex-column" onsubmit="addContact(); return false;">
                 <div class="contactInputs flex-column">
-                    <div class="input flex-row curser"><input required type="text" placeholder="Name"><i
-                            class='bx bx-user'></i>
+                    <div class="input flex-row curser"><input required id="contactNameInput" type="text"
+                            placeholder="Name"><i class='bx bx-user'></i>
                     </div>
-                    <div class="input flex-row curser"><input required type="email" placeholder="Email"><i
-                            class='bx bx-envelope'></i>
+                    <div class="input flex-row curser"><input required id="contactEmailInput" type="email"
+                            placeholder="Email"><i class='bx bx-envelope'></i>
                     </div>
-                    <div class="input flex-row curser"><input required type="tel" placeholder="Phone" pattern="[0-9]"
-                            minlength="10"><i class='bx bx-phone'></i>
+                    <div class="input flex-row curser"><input required id="contactPhoneInput" type="tel"
+                            placeholder="Phone" pattern="^[+]*[(]{0,1}[0-9]{1,4}[)]{0,1}[-\s\./0-9]*$"><i
+                            class='bx bx-phone'></i>
                     </div>
                 </div>
                 <div class="contactOptionButtons flex-row">
-                    <button class="buttonOption1 flex-row curser" onclick="closeAddContactMenu()">Cancel<i
+                    <button class="buttonOption1 flex-row curser" onclick="closeContactMenu()">Cancel<i
                             class='bx bx-x'></i></button>
                     <button class="buttonOption2 flex-row curser">Create contact<i class='bx bx-check'></i></button>
                 </div>
