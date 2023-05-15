@@ -102,7 +102,7 @@ function closeContactMenu() { // Blendet Add-Contact Fenster aus
 function addContact() { // Fügt neuen Kontakt in Kontaktliste hinzu
     let newContact = createNewContact();
     contacts.push(newContact);
-    closeAddContactMenu();
+    closeContactMenu();
     clearContactMenu()
     loadContacts();
     openContactInfo(newContact['id']);
