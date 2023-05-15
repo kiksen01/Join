@@ -311,7 +311,7 @@
 #listContainer {
     width: 100%;
     align-items: center;
-    padding-top: 1rem;
+    padding: 1rem 0;
     gap: 1rem;
 }
 
@@ -381,7 +381,7 @@
 }
 
 #contactInfo {
-    padding: 8.2rem 4.7rem 6.7rem 5.8rem;
+    padding: 8.2rem 4.7rem 0 5.8rem;
 }
 
 .sectionHeader {
@@ -404,6 +404,76 @@
     font-size: var(--font-size-27);
 }
 
+.infoContact {
+    padding: 0;
+    margin-top: 48px;
+}
+
+.infoContact:hover {
+    background: unset;
+}
+
+#infoInitials {
+    width: 120px;
+    height: 120px;
+    font-weight: 500;
+    font-size: var(--font-size-47);
+    border-radius: 70px;
+}
+
+.infoContact:hover #infoInitials {
+    scale: unset;
+}
+
+.infoContactName {
+    gap: 13px;
+}
+
+.infoContactName span {
+    font-weight: 500;
+    font-size: var(--font-size-47);
+}
+
+.infoContactName a {
+    align-items: center;
+    gap: 13px;
+}
+
+#group11 {
+    width: 15px;
+    height: 15px;
+}
+
+#vector13 {
+    width: 0px;
+    height: 15px;
+    left: 7.5px;
+    top: 2px;
+    border: 1.5px solid #29ABE2;
+}
+
+#vector14 {
+    position: absolute;
+    width: 0px;
+    height: 15px;
+    border: 1.5px solid #29ABE2;
+    transform: rotate(90deg);
+}
+
+.infoContactName a:hover #vector13,
+.infoContactName a:hover #vector14 {
+    scale: 1.1;
+}
+
+.infoContactName a > span {
+    font-weight: 400;
+    font-size: var(--font-size-16);
+}
+
+.infoContactName a:hover > span {
+    font-weight: 600;
+}
+
 #contactInformation {
     height: 7.4rem;
     align-items: center;
@@ -416,35 +486,29 @@
 }
 
 #contactInformation a {
-    justify-content: center;
     align-items: flex-end;
     gap: 6px;
 }
 
-#contactInformation a .group8 {
+#group8 {
     width: 5.64px;
     height: 30.9px;
     transform: matrix(-0.85, -0.52, -0.52, 0.85, 0, 0);
 }
 
-#contactInformation a .vector7 {
+#vector7 {
     position: absolute;
     width: 5.64px;
     height: 4.41px;
-    left: 7.11px;
-    top: 25.58px;
-    background: #2A3647;
+    top: 28.58px;
+    background: var(--darkBlue-color);
     transform: matrix(-0.85, -0.52, -0.52, 0.85, 0, 0);
 }
 
-#contactInformation a .vector6 {
-    position: absolute;
+#vector6 {
     width: 5.64px;
     height: 25.37px;
-    left: 20.85px;
-    top: 2.92px;
-    background: #2A3647;
-    transform: matrix(-0.85, -0.52, -0.52, 0.85, 0, 0);
+    background: var(--darkBlue-color);
 }
 
 #contactInformation a span {
@@ -452,7 +516,18 @@
     font-size: var(--font-size-16);
 }
 
+#contactInformation a:hover span {
+    font-weight: 600;
+}
+
+#contactInformation a:hover {
+    font-weight: 600;
+    color: var(--blue-color);
+}
+
 #contactInfoContainer {
+    transform: translateX(150%);
+    transition: all 0.5s ease-in-out;
     gap: 2.1rem;
 }
 
@@ -467,4 +542,162 @@
 
 .information span ~ span {
     font-weight: 400;
+}
+
+#contacts button {
+    position: absolute;
+    bottom: 47px;
+    right: 47px;
+    font-weight: 700;
+    font-size: var(--font-size-21);
+    background-color: var(--darkBlue-color);
+    color: var(--white-color);
+    padding: 14px 15px;
+    border-radius: 10px;
+    gap: 10px;
+    align-items: center;
+    border: none;
+}
+
+#contacts button:hover {
+    background-color: var(--blue-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* add contact window*/
+#contactOptionWindow {
+    width: 99.2rem;
+    height: 42.8em;
+    position: absolute;
+    top: calc(50% - 21.9rem);
+    left: calc(50% - 49.6rem);
+    border-radius: 30px;
+    z-index: 5;
+    transform: translateX(150%);
+    transition: all 0.5s ease-in-out;
+}
+
+.contactOptionContainer {
+    width: 47.5rem;
+    height: 100%;
+    padding-left: 4.7rem;
+    justify-content: center;
+    gap: 12px;
+    background-color: var(--darkBlue-color);
+    color: var(--white-color);
+}
+
+.contactOptionContainer img {
+    width: 44px;
+    height: 54x;
+}
+
+#contactOption {
+    font-weight: 700;
+    font-size: var(--font-size-47);
+}
+
+#addContactHeadline {
+    font-weight: 400;
+    font-size: var(--font-size-21);
+}
+
+.contactOptionHorizontalLine {
+    width: 9rem;
+    border: 1px solid var(--blue-color);
+    border-radius: 3px;
+}
+
+.contactOptionInputContainer {
+    width: calc(100% - 475px);
+    padding-right: 47px;
+    position: relative;
+    align-items: center;
+    background-color: var(--white-color);
+}
+
+.contactOptionInputContainer > i {
+    position: absolute;
+    font-size: var(--font-size-27);
+    color: var(--darkBlue-color);
+    top: 21px;
+    right: 40px;
+}
+
+.contactOptionInputContainer img {
+    width: 12rem;
+    height: 12rem;
+    margin: 0 50px;
+
+}
+
+.contactOptionInputContainer form {
+    width: 100%;
+    gap: 55px;
+}
+
+.contactInputs {
+    gap: 49px;
+}
+
+.contactInputs input {
+    border: none;
+    outline: none;
+}
+
+.input {
+    height: 30px;
+    padding: 0px 16px;
+    border: 1px solid #D1D1D1;
+    border-radius: 6px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 5px;
+}
+
+.input input {
+    width: 100%;
+    cursor: pointer;
+}
+
+.input i {
+    color: #D1D1D1;
+    font-size: var(--font-size-21);
+}
+
+.contactOptionButtons {
+    gap: 10px;
+}
+
+.contactOptionButtons button {
+    align-items: center;
+    gap: 5px;
+    padding: 6px;
+    border-radius: 6px;
+}
+
+.buttonOption1 {
+    font-weight: 400;
+    font-size: var(--font-size-16);
+    background-color: var(--white-color);
+    color: var(--darkBlue-color);
+    border: 2px solid var(--darkBlue-color);
+}
+
+.buttonOption2 {
+    font-weight: 700;
+    font-size: var(--font-size-16);
+    background-color: var(--darkBlue-color);
+    color: var(--white-color);
+    border: none;
+}
+
+.buttonOption1:hover {
+    color: var(--blue-color);
+    border-color: var(--blue-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.buttonOption2:hover {
+    background-color: var(--blue-color);
 }

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="src/css/fonts.css">
     <link rel="stylesheet" href="src/css/settings.css">
     <link rel="stylesheet" href="src/css/global.css">
@@ -17,81 +18,14 @@
     <title>Join - Contacts</title>
 </head>
 
-<body onload="includeHTML()">
+<body onload="includeHTML(), loadContacts()">
 
     <div class="header-includer" w3-include-html="src/templates/header.html"></div>
     <div class="sidebar-includer" w3-include-html="src/templates/sidebar.html"></div>
 
     <section id="contacts" class="flex-row">
         <article id="contactList">
-            <div id="listContainer" class="flex-column">
-                <div class="contactGroup flex-column">
-                    <div class="letter flex-row">A</div>
-                    <div class="horizontalLine"></div>
-                    <div class="contactSubList flex-column">
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">AM</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">Anton Mayer</span>
-                                <span class="contactSubListEmail">antom@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">AS</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">Anja Schulz</span>
-                                <span class="contactSubListEmail">schulz@hotmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contactGroup flex-column">
-                    <div class="letter flex-row">B</div>
-                    <div class="horizontalLine"></div>
-                    <div class="contactSubList flex-column">
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">BZ</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">Benedikt Ziegler</span>
-                                <span class="contactSubListEmail">benedikt@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contactGroup flex-column">
-                    <div class="letter flex-row">D</div>
-                    <div class="horizontalLine"></div>
-                    <div class="contactSubList flex-column">
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">DA</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">David Eisenberg</span>
-                                <span class="contactSubListEmail">davidberg@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="contactGroup flex-column">
-                    <div class="letter flex-row">E</div>
-                    <div class="horizontalLine"></div>
-                    <div class="contactSubList flex-column">
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">EF</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">Eva Fischer</span>
-                                <span class="contactSubListEmail">eva@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="contact flex-row curser">
-                            <div class="contactInitials grid">EM</div>
-                            <div class="contactName flex-column">
-                                <span class="contactSubListName">Emmanuel Mauer</span>
-                                <span class="contactSubListEmail">emmanuelMa@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div id="listContainer" class="flex-column"></div>
         </article>
         <article id="contactInfo">
             <div class="sectionHeader flex-row">
@@ -100,35 +34,74 @@
                 <span>Better with a team</span>
             </div>
             <div id="contactInfoContainer" class="flex-column">
-                <div class="contact flex-row">
-                    <div class="contactInitials">AM</div>
-                    <div id="contactName">
-                        <span>Anton Mayer</span>
-                        <a></a>
+                <div class="contact infoContact flex-row">
+                    <div id="infoInitials" class="contactInitials grid"></div>
+                    <div class="infoContactName flex-column">
+                        <span id="infoName"></span>
+                        <a class="flex-row curser">
+                            <div id="group11" class="grid">
+                                <div id="vector13"></div>
+                                <div id="vector14"></div>
+                            </div>
+                            <span class="blueFont">Add Task</span>
+                        </a>
                     </div>
                 </div>
                 <div id="contactInformation" class="flex-row">
                     <span>Contact Information</span>
-                    <a class="flex-row">
-                        <div class="group8">
-                            <div class="vector7"></div>
-                            <div class="vector6"></div>
-                        </div>
+                    <a class="flex-row curser">
+                        <img src="src/img/group8.png" alt="">
+                        <!-- <div id="group8">
+                            <div id="vector7"></div>
+                            <div id="vector6"></div>
+                        </div> -->
                         <span>Edit Contact</span>
                     </a>
                 </div>
                 <div class="information flex-column">
                     <span>Email</span>
-                    <span class="blueFont">antom@gmail.com</span>
+                    <span id="infoEmail" class="blueFont"></span>
                 </div>
                 <div class="information flex-column">
                     <span>Phone</span>
-                    <span>+49 1111 111 11 1</span>
+                    <span id="infoPhone"></span>
                 </div>
             </div>
-            <button></button>
         </article>
+        <button class="flex-row curser" onclick="openAddContactMenu()">New contact<img src="src/img/newContact.png"
+                alt=""></button>
     </section>
+    <div id="contactOptionWindow" class="flex-row">
+        <div class="contactOptionContainer flex-column">
+            <img src="src/img/join-logo.svg" alt="">
+            <span id="contactOption">Add contact</span>
+            <span id="addContactHeadline">Tasks are better with a team!</span>
+            <div class="contactOptionHorizontalLine"></div>
+        </div>
+        <div class="contactOptionInputContainer flex-row">
+            <i class='bx bx-x curser' onclick="closeAddContactMenu()"></i>
+            <img src="src/img/group 13.png" alt="">
+            <form class="flex-column" onsubmit="return false;">
+                <div class="contactInputs flex-column">
+                    <div class="input flex-row curser"><input required type="text" placeholder="Name"><i
+                            class='bx bx-user'></i>
+                    </div>
+                    <div class="input flex-row curser"><input required type="email" placeholder="Email"><i
+                            class='bx bx-envelope'></i>
+                    </div>
+                    <div class="input flex-row curser"><input required type="tel" placeholder="Phone" pattern="[0-9]"
+                            minlength="10"><i class='bx bx-phone'></i>
+                    </div>
+                </div>
+                <div class="contactOptionButtons flex-row">
+                    <button class="buttonOption1 flex-row curser" onclick="closeAddContactMenu()">Cancel<i
+                            class='bx bx-x'></i></button>
+                    <button class="buttonOption2 flex-row curser">Create contact<i class='bx bx-check'></i></button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="partitionWindow" class="d-none"></div>
 </body>
 
 </html>

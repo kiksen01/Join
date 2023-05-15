@@ -18,6 +18,8 @@ html {
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
+    background-color: var(--white2-color);
+    overflow-x: hidden;
 }
   
 .flex-row {
@@ -52,7 +54,7 @@ body {
 }
 
 .blueFont {
-    color: #007CEE;
+    color: #29abe2;
 }
 
 .button {
@@ -61,4 +63,14 @@ body {
 
 .filter-white {
     filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+#partitionWindow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.3);
 }
