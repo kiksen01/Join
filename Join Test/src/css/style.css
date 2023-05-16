@@ -412,12 +412,19 @@
     background: unset;
 }
 
-#infoInitials {
+#infoInitials,
+#editContactInitials {
     width: 120px;
     height: 120px;
     font-weight: 500;
     font-size: var(--font-size-47);
     border-radius: 70px;
+}
+
+#editContactInitials {
+    width: 180px;
+    height: 100px;
+    margin: 0 70px;
 }
 
 .infoContact:hover #infoInitials {
@@ -438,35 +445,13 @@
     gap: 13px;
 }
 
-#group11 {
-    width: 15px;
-    height: 15px;
-}
-
-#vector13 {
-    width: 0px;
-    height: 15px;
-    left: 7.5px;
-    top: 2px;
-    border: 1.5px solid #29ABE2;
-}
-
-#vector14 {
-    position: absolute;
-    width: 0px;
-    height: 15px;
-    border: 1.5px solid #29ABE2;
-    transform: rotate(90deg);
-}
-
-.infoContactName a:hover #vector13,
-.infoContactName a:hover #vector14 {
-    scale: 1.1;
-}
-
 .infoContactName a > span {
     font-weight: 400;
     font-size: var(--font-size-16);
+}
+
+.infoContactName a:hover .addTaskImg path {
+    stroke-width: 3;
 }
 
 .infoContactName a:hover > span {
@@ -476,7 +461,7 @@
 #contactInformation {
     height: 7.4rem;
     align-items: center;
-    gap: 5.9rem;
+    gap: 6rem;
 }
 
 #contactInformation span {
@@ -487,6 +472,7 @@
 #contactInformation a {
     align-items: flex-end;
     gap: 6px;
+    margin-bottom: 6.5px;
 }
 
 #contactInformation a:hover .editContactImg path {
@@ -543,16 +529,16 @@
 
 #contacts button:hover {
     background-color: var(--blue-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* add/edit contact window*/
-#contactOptionWindow {
-    width: 99.2rem;
-    height: 42.8em;
+#contactOptionMenu {
+    width: 100rem;
+    height: 40rem;
     position: absolute;
-    top: calc(50% - 21.9rem);
-    left: calc(50% - 49.6rem);
+    top: calc(50% - 20rem);
+    left: calc(50% - 50rem);
     border-radius: 30px;
     z-index: 5;
     transform: translateX(150%);
@@ -560,7 +546,7 @@
 }
 
 .contactOptionContainer {
-    width: 47.5rem;
+    width: 40%;
     height: 100%;
     padding-left: 4.7rem;
     justify-content: center;
@@ -591,11 +577,11 @@
 }
 
 .contactOptionInputContainer {
-    width: calc(100% - 475px);
-    padding-right: 47px;
-    position: relative;
+    width: 60%;
     align-items: center;
+    padding-right: 4.7rem;
     background-color: var(--white-color);
+    position: relative;
 }
 
 .contactOptionInputContainer > i {
@@ -609,17 +595,17 @@
 .contactOptionInputContainer img {
     width: 12rem;
     height: 12rem;
-    margin: 0 50px;
+    margin: 0 70px;
 
 }
 
 .contactOptionInputContainer form {
     width: 100%;
-    gap: 55px;
+    gap: 45px;
 }
 
 .contactInputs {
-    gap: 49px;
+    gap: 30px;
 }
 
 .contactInputs input {
@@ -628,7 +614,7 @@
 }
 
 .input {
-    height: 30px;
+    height: 35px;
     padding: 0px 16px;
     border: 1px solid #D1D1D1;
     border-radius: 6px;
@@ -647,8 +633,12 @@
     font-size: var(--font-size-21);
 }
 
+#contactOptionEditContactButtons {
+    justify-content: flex-end;
+}
+
 .contactOptionButtons {
-    gap: 10px;
+    gap: 20px;
 }
 
 .contactOptionButtons button {
@@ -674,12 +664,17 @@
     border: none;
 }
 
+.saveButton {
+    padding: 6px 30px !important;
+}
+
 .buttonOption1:hover {
     color: var(--blue-color);
     border-color: var(--blue-color);
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
 
 .buttonOption2:hover {
     background-color: var(--blue-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.2);
 }
