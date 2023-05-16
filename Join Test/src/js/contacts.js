@@ -69,7 +69,7 @@ function filterContactsByChar(names, x) {
             names.push(contacts[i]);
         }
     }
-    names = sortFilteredContacts(names); // Gefilterte Liste wird alphabetisch geordnet
+    names = sortFilteredContacts(names);
 }
 
 /**
@@ -87,7 +87,7 @@ function sortFilteredContacts(names) {
 }
 
 /**
- * Gets the first letter of the name and returns it as a lowercase letter
+ * Returns first letter of the name as a lowercase letter
  * 
  * @param {number} i - Index of contacts
  * @returns {string} - first letter of the name as a lowercase letter
@@ -100,7 +100,7 @@ function getFirstChar(i) {
 }
 
 /**
- * Gets the first letter of the lastname and returns it as a uppercase letter
+ * Returns the first letter of the lastname as a uppercase letter
  * 
  * @param {number} i - Index of seperated contacts
  * @param {Array.<{id: Number, name: String, email: String, phone: String, color: String}>} array - Array for seperated contacts
@@ -108,7 +108,7 @@ function getFirstChar(i) {
  */
 function getFirstCharofLastname(i, array) {
     let char = array[i]['name'];
-    let index = char.indexOf(' ');
+    let index = char.lastIndexOf(' ');
     char = char.charAt(index + 1);
     char = char.toUpperCase();
     return char;
@@ -197,7 +197,7 @@ function openEditContactMenu(id) {
 }
 
 /**
- * Changes the option-menu-buttons from add-contact-menu to edit-contact-menu and vice versa
+ * Changes the option-menu elements from add-contact-menu to edit-contact-menu and vice versa
  * 
  * @param {string} element1 - ID of the Container for hiding the element
  * @param {string} element2 - ID of the Container for displaying the element
@@ -274,8 +274,8 @@ function addContact() {
  */
 function createNewContact() {
     let id = getIdForNewContact();
-    let name = document.getElementById('contactNameInput').value;
-    let email = document.getElementById('contactEmailInput').value;
+    let name = firstLettersToUpperCase();
+    let email = emailToLowerCase();
     let phone = document.getElementById('contactPhoneInput').value;
     let color = createRandomRGBColor();
     let newContact = {
@@ -289,6 +289,39 @@ function createNewContact() {
 }
 
 /**
+ * Returns the firstname (if exist secondname) and lastname where the first letter is an uppercase letter
+ * name is converted to an array of all characters
+ * while looping through the array, after each blank character the following character is converted to an uppercase letter
+ * then the array is converted back to a string
+ * 
+ * @returns {string} - Name of contact
+ */
+function firstLettersToUpperCase() {
+    let name = document.getElementById('contactNameInput').value;
+    name = name.toLowerCase();
+    let chars = Array.from(name);
+    chars[0] = chars[0].toUpperCase();
+    for (let i = 0; i < chars.length; i++) {
+        if (chars[i] === ' ') {
+            chars[i + 1] = chars[i + 1].toUpperCase();
+        }
+    }
+    name = chars.join('');
+    return name;
+}
+
+/**
+ * Returns email to lowercase
+ * 
+ * @returns {string} - Email of conatact
+ */
+function emailToLowerCase() {
+    let email = document.getElementById('contactEmailInput').value;
+    email = email.toLowerCase();
+    return email;
+}
+
+/**
  * Clears the Inputfields of the Contact Menu
  */
 function clearContactMenuInputs() {
@@ -298,7 +331,7 @@ function clearContactMenuInputs() {
 }
 
 /**
- * Generates and return a new ID number for new contact
+ * Generates and returns a new ID number for new contact
  * 
  * @returns {number} - new ID number for new contact
  */
@@ -317,8 +350,8 @@ function saveContact(index) {
     contacts[index]['name'] = document.getElementById('contactNameInput').value;
     contacts[index]['email'] = document.getElementById('contactEmailInput').value;
     contacts[index]['phone'] = document.getElementById('contactPhoneInput').value;
-    document.getElementById('editContactInitials').innerHTML = getInitial(index);
     addContactInformation(contacts[index]['id']);
+    closeContactOptionMenu();
     loadContacts();
 }
 

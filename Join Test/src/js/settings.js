@@ -2,14 +2,14 @@ let contacts = [
     {
         'id' : 0,
         'name' : 'Salazar Slytherin',
-        'email' : 'onlyReinblüter@web.de',
+        'email' : 'onlyreinblüter@web.de',
         'phone' : '6666 666666',
         'color' : 'rgb(78, 150, 61)'
     },
     {
         'id' : 1,
         'name' : 'Philipp Grabowski',
-        'email' : 'SwMmCBoss90@web.de',
+        'email' : 'swmmcboss90@web.de',
         'phone' : '0152 28166705',
         'color' : 'rgb(31, 215, 193)'
     },
@@ -65,7 +65,7 @@ let contacts = [
     {
         'id' : 9,
         'name' : 'Yvonne Claire',
-        'email' : 'claireYv@t-online.de',
+        'email' : 'claireyv@t-online.de',
         'phone' : '0174 4395982',
         'color' : 'rgb(124, 141, 233)'
     }
