@@ -1,0 +1,506 @@
+@font-face {
+    font-family: 'zabras' ;
+    src: url('fonts/zabars.ttf');
+}
+
+body{
+    margin: 0;
+    font-family: 'zabras', Arial, Helvetica, sans-serif;
+}
+
+canvas{
+    background-color: black;
+    position: relative;
+    display: block;
+}
+
+.background{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/5_background/second_half_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+.game-fullscreen{
+    position: absolute;
+    right: 0;
+    width: 32px;
+    margin: 10px;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.d-none{
+    display: none !important;
+}
+
+.main{
+    position: relative;
+    width: 780px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image: url(img/5_background/second_half_background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.start-container{
+    width: 100%;
+    aspect-ratio: 780/ 480;
+    background-image: url(img/9_intro_outro_screens/start/startscreen_2.png);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.lose-screen{
+    width: 100%;
+    aspect-ratio: 780 / 480;
+    background-image: url(img/9_intro_outro_screens/game_over/oh\ no\ you\ lost!.png);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+.button-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+    left: 20px;
+}
+.lose-button-container{
+    display: flex;
+    margin-bottom: 10px;
+    gap: 150px;
+}
+
+.text-container{
+    top: 50px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 60px;
+    font-weight: bold;
+    gap: 20px;
+    color: red;
+}
+
+.congrats-text{
+    font-size: 50px;
+}
+
+.win-button-container{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    bottom: 10px;
+}
+
+.win-screen{
+    width: 100%;
+    aspect-ratio: 780 / 480;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(177, 126, 49, 0.3);
+}
+
+.button{
+    font-family: 'pistol', Arial, Helvetica, sans-serif;
+    width: 200px;
+    height: 50px;
+    cursor: pointer;
+}
+.start-button{
+    display: flex;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+.icon-container{
+    cursor: pointer;
+    display: flex;
+    background-color: rgb(59, 130, 151);
+    width: 42px;
+    height: 42px;
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+.fullscreen{
+    width: 100vw !important;
+    height: 100vh !important;
+}
+
+.icon-container:hover{
+    background-color: rgb(44, 109, 129);
+}
+
+.mute-img{
+    position: absolute;
+    top: 0;
+    margin-top: 16px;
+    right: 10px;
+    width: 32px;
+    z-index: 1;
+}
+
+.full-img{
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    width: 32px;
+    z-index: 1;
+    margin: 15px;
+    margin-right: 60px;
+}
+
+#infoLayer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    width: 65%;
+    color: #f6ab76;
+    animation: slideIn 0.5s ease-in;
+    z-index: 100000;
+}
+@keyframes slideIn {
+    0% {
+        width: 0;
+    }
+
+    100% {
+        width: 65%;
+    }
+}
+
+.on-fullscreen{
+    font-size: 40px !important;
+}
+.on-upper-fullscreen{
+    font-size:30px !important;
+}
+
+.on-upper-fullscreen img{
+    width: 40px !important;
+}
+
+.story-text {
+    font-size: 26px;
+    animation: fadeItin 1s ease-in;
+}
+
+@keyframes fadeItin {
+    0% {
+        opacity: 0;
+    }
+
+    50% {
+        opacity: 0.1;
+    }
+    
+
+    100% {
+        opacity: 1;
+    }
+}
+.x-icon{
+    margin: 10px;
+    cursor: pointer;
+    width: 16px;
+}
+
+.key-container{
+    display: flex;
+    width: 150px;
+    justify-content: space-between;
+    align-items: center;
+    height: 36px;
+    font-size: 28px;
+}
+
+.arrow-icon{
+    width: 24px;
+}
+
+.double-key-container{
+   display: flex; 
+   justify-content: center;
+   text-align: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.upper-info-container{
+    margin-left: 10px;
+    animation: fadeItin 1s ease-in;
+}
+
+.story-text-container{
+    margin: 10px;
+}
+
+#pauseMenu{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10000;
+}
+
+.pause-button-container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.pause-container{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    justify-content: center;
+}
+
+.pause-button{
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+.pause-icon-container{
+    cursor: pointer;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(121, 97, 52);
+}
+.pause-icon-container:hover{
+    background-color: rgb(153, 110, 31);
+}
+
+.pause-text{
+    position: absolute;
+    top: 0;
+    font-size: 64px;
+}
+
+.mobile-btn-container{
+    display: flex;
+    justify-content: space-between;
+}
+.mobile-btn-container img{
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 42px;
+}
+
+.mobile-btns-left{
+    position: absolute;
+    bottom: 1px;
+    left: 0px;
+    margin-left: 2px;
+    margin-bottom: 5px;
+}
+.mobile-btns-right{
+    position: absolute;
+    right: 0;
+    bottom: 1px;
+    margin-right: 2px;
+    margin-bottom: 5px;
+}
+.upper-mobile-btns{
+    position: absolute;
+    top: 10px;
+    right: 70px;
+    z-index: 1000;
+}
+.upper-mobile-btns img{
+    width: 32px;
+    padding: 5px;
+}
+
+
+.btn-design{
+    background-color: rgb(87, 66, 27);
+    border-radius: 100%;
+    padding: 4px;
+}
+
+.lose-icon-container{
+    display: flex;
+    cursor: pointer;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(121, 97, 52);
+}
+.lose-icon-container:hover{
+    background-color: rgb(153, 110, 31);
+}
+
+.win-icon-container{
+    cursor: pointer;
+    padding-left: 60px;
+    padding-right: 60px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: rgb(121, 97, 52);
+}
+
+.device-warning{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    gap: 20px;
+}
+.device-warning img{
+    width: 48px;
+}
+
+.turn-to-mobile{
+    background-color: black;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1000000;
+}
+
+.win-icon-container:hover{
+    background-color: rgb(153, 110, 31);
+}
+
+@media only screen and (max-width: 780px) {
+    .main{
+        width: 100% !important;
+    }
+    #canvas{
+        width: 100% !important;
+    }
+    .pause-menu{
+        width: 100% !important;
+        height: 100% !important;
+    }
+    
+
+    .pause-button-container{
+        scale: 0.5;
+    }
+    .pause-text{
+        scale: 0.7;
+    }
+    .lose-button-container{
+        scale:  0.5;
+    }
+    .win-button-container{
+        scale: 0.5;
+    }
+    .text-container{
+        scale: 0.5;
+        top: 5px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .key-container{
+        height: 20px;
+        font-size: 18px;
+    }
+
+    .story-text{
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .key-container{
+        height: 12px;
+        font-size: 10px;
+    }
+    .key-container img{
+        width: 14px;
+    }
+
+    .story-text{
+        font-size: 10px;
+    }
+    .story-text-container{
+        margin-top: 0px ;
+    }
+    .x-icon{
+        margin-bottom: 0px;
+    }
+}
+@media only screen and (max-width: 320px) {
+    
+
+    .story-text{
+        font-size: 6px;
+    }
+    .story-text-container{
+        margin-top: 0px ;
+    }
+    .x-icon{
+        margin-bottom: 0px;
+    }
+}
+
+@media only screen and (max-height: 480px) {
+    #canvas{
+        height: 100vh;
+        width: 100%;
+    }
+   
+    .win-screen{
+        height: 100vh;
+    }
+    .start-container{
+        height: 100vh;
+    }
+    .lose-screen{
+        height: 100vh;
+    }
+    
+    .full-img{
+        margin-right: 110px;
+    }
+}
+
+
+    

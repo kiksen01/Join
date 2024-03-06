@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/pngs/fav.png" type="image/x-icon">
+    <title>El Pollo Loco</title>
+    <script src="models/drawable-object.class.js"></script>
+    <script src="models/movable-object.class.js"></script>
+    <script src="models/status-bar-boss.class.js"></script>
+    <script src="models/status-bar-health.class.js"></script>
+    <script src="models/status-bar-bottle.class.js"></script>
+    <script src="models/status-bar-coin.class.js"></script>
+    <script src="models/character.class.js"></script>
+    <script src="models/collectable-bottle.class.js"></script>
+    <script src="models/collectable-coin.class.js"></script>
+    <script src="models/throwable-object.class.js"></script>
+    <script src="models/chicken.class.js"></script>
+    <script src="models/baby-chicken.class.js"></script>
+    <script src="models/world.class.js"></script>
+    <script src="models/cloud.class.js"></script>
+    <script src="models/background.class.js"></script>
+    <script src="models/keyboard.class.js"></script>
+    <script src="models/level.class.js"></script>
+    <script src="models/endboss.class.js"></script>
+    <script src="levels/level1.js"></script>
+    <script src="js/game.js"></script>
+</head>
+
+<body class="background" id="screen">
+
+    <div class="main" id="mainWindow">
+
+        <div id="pauseMenu" class="pause-menu d-none">
+            <div class="pause-container">
+                <span class="pause-text">Pause</span>
+                <div class="pause-button-container">
+                    <div class="pause-icon-container" onclick="onPause('add')">
+                        <img src="img/pngs/play.png" class="pause-button">
+                    </div>
+                    <div class="pause-icon-container" onclick="onMainMenu()">
+                        <img src="img/pngs/menu.png" class="pause-button">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+
+        <div>
+            <img src="img/pngs/full.png" class="full-img d-none" id="fullscreenBtn" onclick="onFullscreen()"></img>
+        </div>
+
+
+
+
+
+        <div class="turn-to-mobile d-none" id="mobileWarning">
+            <div class="device-warning">
+                <span>Warning</span>
+                <span>Please Turn your Device</span>
+                <img src="mobile-imgs/btn-throw.png" alt="">
+            </div>
+        </div>
+
+        <div class="win-screen d-none" id="winScreen">
+            <div class="text-container">
+                <span>YOU WON!</span>
+                <span class="congrats-text">Congratulations!</span>
+            </div>
+            <div class="win-button-container" onclick="onMainMenu()">
+                <div class="win-icon-container">
+                    <img src="img/pngs/menu.png" class="win-button">
+                </div>
+            </div>
+        </div>
+
+        <div class="lose-screen d-none" id="loseScreen">
+            <div class="lose-button-container">
+                <div class="lose-icon-container" onclick="init()">
+                    <img src="img/pngs/restart.png" class="pause-button">
+                </div>
+                <div class="lose-icon-container" onclick="onMainMenu()">
+                    <img src="img/pngs/menu.png" class="pause-button">
+                </div>
+            </div>
+        </div>
+
+
+
+        <div id="infoLayer" class="d-none">
+            <div>
+                <img onclick="showInfo('add')" src="img/pngs/x-icon.png" alt="exit" class="x-icon">
+            </div>
+            <div class="upper-info-container" id="upperInfo">
+                <div class="key-container">
+                    <span>Move Right</span>
+                    <div class="double-key-container">
+                        <img src="img/pngs/right-arrow.png" class="arrow-icon">
+                        <span>D</span>
+                    </div>
+                </div>
+                <div class="key-container">
+                    <span>Move Left</span>
+                    <div class="double-key-container">
+                        <img src="img/pngs/left-arrow.png" class="arrow-icon">
+                        <span>A</span>
+                    </div>
+                </div>
+                <div class="key-container">
+                    <span>Jump</span>
+                    <img src="img/pngs/space.png" alt="" class="arrow-icon">
+                </div>
+                <div class="key-container">
+                    <span>Throw</span>
+                    <span>F</span>
+                </div>
+                <div class="key-container">
+                    <span>Pause</span>
+                    <span>P</span>
+                </div>
+            </div>
+            <div class="story-text-container">
+                <span id="storyText" class="story-text">The Time has finally come for the Great Pepe to proove himself
+                    worthy
+                    of
+                    beating the most feared Enemy in the whole desert: El Pollo Loco!
+                    Pick up Gold coins for a good highscore. Only by picking up throwable Bottles, you can win against El
+                    Pollo Loco!
+                    These bottles are his weakness. Throw them against him and
+                    beat him!
+                </span>
+            </div>
+        </div>
+
+        <canvas id="canvas" width="780" height="480" class="game-scene d-none">
+
+        </canvas>
+
+        <div class="mobile-btn-container d-none" id="mobileInterface">
+            <div class="upper-mobile-btns" id="btnPause">
+                <img src="mobile-imgs/btn-pause.png">
+            </div>
+            <div class="mobile-btns-left">
+                <img src="mobile-imgs/btn-left.png" id="btnLeft" class="btn-design">
+                <img src="mobile-imgs/btn-right.png" id="btnRight" class="btn-design">
+            </div>
+            <div class="mobile-btns-right">
+                <img src="mobile-imgs/btn-jump.png" id="btnJump" class="btn-design">
+                <img src="mobile-imgs/btn-throw.png" id="btnThrow" class="btn-design">
+            </div>
+        </div>
+
+        <div class="start-container" id="mainMenu">
+            <div class="button-container" id="buttons">
+                <div class="icon-container" onclick="init()">
+                    <img src="img/pngs/play.png" class="start-button"></img>
+                </div>
+                <div class="icon-container" onclick="showInfo('remove')">
+                    <img src="img/pngs/info.png" class="start-button"></img>
+                </div>
+                <div class="icon-container" onclick="onFullscreen()" id="pcFullscreen">
+                    <img src="img/pngs/full.png" class="start-button" id="fullscreenBtn"></img>
+                </div>
+            </div>
+
+            
+        </div>
+        
+        <img src="mobile-imgs/unmute.png" class="mute-img" onclick="onMute()" id="muteImg">
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
