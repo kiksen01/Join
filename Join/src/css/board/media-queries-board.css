@@ -1,0 +1,288 @@
+/*Media queries for board*/
+
+@media(max-width: 1330px) {
+    .add-task-container-board {
+        margin-left: 150px;
+        margin-right: 150px;
+    }
+}
+@media(max-width: 1100px) {
+    .add-task-container-board {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+@media(max-width: 560px) {
+    .add-task-container-board {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 1250px){
+    .task-column-header h2 {
+        font-size: 1.8rem;
+    }
+}
+
+@media(max-width: 1150px){
+    #board-section {
+        padding-left: 230px;
+        overflow-x: scroll;
+    }
+
+    #board-section::-webkit-scrollbar {
+        display: none;
+    }
+
+    #tasks-container {
+        flex-direction: column !important;
+        margin-top: 32px;
+    }
+
+    .task-status-container {
+        width: 100%;
+        min-height: 280px;
+    }
+
+    .task-container{
+        flex-direction: row !important;
+        margin-bottom: 8px;
+        padding: 0;
+        overflow-x: scroll;
+    }
+
+    .task-container::-webkit-scrollbar {
+        display: none;
+    }
+
+    .task-column-header {
+        position: static;
+    }
+
+
+    .board-task-box {
+        margin-top: 0;
+        margin-right: 8px;
+        min-width: 300px;
+    }
+
+    .hide-mobile {
+        display: none;
+     }
+}
+
+@media(max-width: 1097px){
+    #board-section {
+        padding-left: 180px;
+    }
+
+    #board-content {
+        width: auto;
+        padding: 32px;
+    }
+
+    #board-header {
+        flex-direction: column !important;
+        align-items: flex-start;
+        position: relative;
+    }
+
+    #add-task-button {
+        width: 75px;
+    }
+
+    
+}
+
+
+@media(max-width: 670px){
+    #board-section {
+        padding-left: 90px;
+    }
+
+    #add-task-button {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 25px;
+        right: 16px;
+        margin: 0;
+    }
+    .task-popup {
+        margin: 0 32px;
+    }
+
+    .mobile-create-btn-board {
+        cursor: pointer;
+        border: none;
+        color: white;
+        font-weight: bold;
+        background-color: rgb(38, 38, 38);
+        padding: 10px;
+        border-radius: 8px;
+        height: 40px;
+        position: absolute;
+        right: 20px;
+        width: 125px;
+    }
+
+    .mobile-dropdown-opener {
+        width: 14px;
+        height: 42px;
+    }
+}
+
+@media(max-width: 467px){
+    #board-section {
+        padding: 0 16px;
+        overflow-y: scroll;
+    }
+
+    #board-section {
+        overflow-x: scroll;
+    }
+
+    #board-section::-webkit-scrollbar{
+        display: none;
+    }
+
+    #board-content {
+        width: auto;
+        height: calc(100vh - 159px);
+        padding: 0;
+        margin-top: 100px;
+    }
+
+    .mobile-kanban-project {
+        display: block !important;
+    }
+
+    
+
+    #board-header input {
+        width: 250px;
+        height: 40px;
+    }
+
+    #add-task-button {
+        height: 40px;
+        width: 40px;
+        position: absolute;
+        top: 40px;
+        right: 0px;
+        margin: 0;
+    }
+
+    #search-task {
+        margin: 0;
+    }
+    
+    /*Add Task overlay */
+
+    #add-task-overlay {
+        background-color: rgba(0, 0, 0, 0);
+    }
+
+    #add-task-container-board {
+        background-color: #F6F7F8;
+        padding: 0;
+        margin: 0;
+        border-radius: 0;
+        height: calc(100vh - 120px);
+        width: 100vw;
+        position: absolute;
+        bottom: 0;
+        overflow-y: scroll;
+    }
+
+    .add-task-container {
+        flex-direction: column;
+    }
+
+    .line {
+        display: none;
+    }
+
+   
+
+    /*Task Popup*/
+
+    .task-popup-background {
+        background-color: #fff;
+        z-index: 2;
+    }
+
+    .task-popup {
+        padding: 16px;
+        position: absolute;
+        top: 85px;
+        bottom: 79px;
+        width: 100vw;
+        border-radius: 0;
+        height: auto !important;
+        overflow-x: scroll;
+    }
+
+    .close-task-popup {
+        display: none;
+    }
+
+    .mobile-close-task-popup {
+        display: block;
+        position: absolute;
+        top: 15px;
+        right: 30px;
+    }
+
+    .task-popup h1  {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .task-popup span, p {
+        font-size: 16px !important;
+    }
+
+    .category-tag {
+        margin: 0;
+    }
+
+    .assigned-contact-box {
+        margin-top: 16px;
+    }
+    
+    .delete-and-edit-task {
+        flex-direction: column !important;
+        max-height: 150px;
+        max-width: 35px;
+        margin-right: 0;
+        margin-left: 245px;
+        bottom: 5px !important;
+    }
+
+    .mobile-edit-and-delete {
+        margin: 8px;
+        border-radius: 15px !important;
+        border: 1px solid #2a3647;
+        height: 50px;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /*edit task*/
+
+    .mobile-change-button {
+        position: absolute;
+        bottom: -175px;
+        margin-bottom: 5px;
+    }
+
+    .mobile-edit {
+        margin-bottom: 64px;
+    }
+ }
+    
+    

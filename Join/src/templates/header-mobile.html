@@ -1,0 +1,16 @@
+<head>
+    <script src="../js/add-task/script.js"></script>
+</head>
+
+<div id="mobile_header" class="header flex-row box-shadow">
+    <img id="header_logo" src="src/img/capa2.svg" alt="">
+    <img id="profile_img" class="profil_img curser " src="src/img/profile-picture.png" alt=""
+        onclick="stopPropagation(event); openHeaderMenu()">
+        <button onclick="createTask()" class="mobile-create-btn-board d-none" id="mobile-create-btn-board">Create Task</button>
+    <div id="mobile_header_menu" class="flex-column d-none" onclick="stopPropagation(event)">
+        <a id="mobile_help_link" class="curser" onclick="toggleHelp(); closeHeaderMenu()">Help</a>
+        <a href="legal-notice.html" id="mobile_legal_notice_link" class="curser">Legal notice</a>
+        <a href="login.html" id="mobile_logout_link" class="curser">Log out</a>
+    </div>
+    <button onclick="createTask()" class="create-btn d-none" id="create-task-button-mobile">Create Task</button>
+</div>

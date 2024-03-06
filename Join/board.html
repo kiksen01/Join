@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="src/css/fonts.css">
+    <link rel="stylesheet" href="src/css/settings.css">
+    <link rel="stylesheet" href="src/css/global.css">
+    <link rel="stylesheet" href="src/css//template-styles/header.css">
+    <link rel="stylesheet" href="src/css/template-styles/sidebar.css">
+    <link rel="stylesheet" href="src/css/template-styles/help.css">
+    <link rel="stylesheet" href="src/css//board/board.css">
+    <link rel="stylesheet" href="src/css/board/media-queries-board.css">
+    <link rel="stylesheet" href="src/css/add-task/style.css">
+    <link rel="icon" type="image/x-icon" href="src/img/join-logo.svg">
+    <script src="src/js/storage.js"></script>
+    <script src="src/js/add-task/html-templates.js"></script>
+    <script src="src/js/add-task/script.js"></script>
+    <script src="src/js/board/templates.js"></script>
+    <script src="src/js/board/script.js"></script>
+    <script src="src/js/global.js"></script>
+    <title>Join - Board</title>
+</head>
+
+<body onload="includeHTML(); init(); loadAccounts();" onclick="closeHeaderMenu()">
+
+    <div id="add-task-overlay" class="add-task-overlay d-none add-task-overlay-not-visible">
+        <div id="add-task-container-board" class="add-task-container-board">
+            <img onclick="closeAddTask(), clearAddTask()" class="close-window" src="src/img/close-window.png">
+            <div w3-include-html="src/templates/add-task-template.html">
+
+            </div>
+        </div>
+    </div>
+
+    <div onclick="closeTaskPopUp()" class="task-popup-background d-none" id="task-popup-background">
+        <div onclick="stopPropagation(event)" class="task-popup" id="task-popup">
+            <img onclick="closeTaskPopUp()" class="close-task-popup" src="src/img/close-window.png">
+            <img src="src/img/arrow-left-line.png" onclick="closeTaskPopUp()" class="mobile-close-task-popup">
+            <div id="popup-content"></div>
+
+        </div>
+    </div>
+
+    <div id="header_includer" w3-include-html="src/templates/header.html"></div>
+    <div id="sidebar_includer" w3-include-html="src/templates/sidebar.html"></div>
+
+    <div id="mobile_header_includer" w3-include-html="src/templates/header-mobile.html"></div>
+
+
+    <div id="help_includer" w3-include-html="src/templates/help.html" class="d-none"></div>
+
+    <section id="board-section">
+        <div class="flex-column" id="board-content">
+            <div class="flex-row" id="board-header">
+                <h2 class="mobile-kanban-project d-none">Kanban Project Management Tool</h2>
+                <h1>Board</h1>
+                <div id="search-and-add" class="flex-row">
+                    <input onkeyup="searchForTask()" class="search-tasks-input" id="search-task" placeholder="Find Task"
+                        type="text" style="background: #fff url(src/img/line-and-magnifier.svg) center right no-repeat;">
+                    <button onclick="openAddTask()" id="add-task-button" class="button flex-row button-hover"><span class="hide-mobile">Add task</span>
+                        <img class="filter-white" src="./src/img/plus.svg"></button>
+                </div>
+                
+            </div>
+
+            <div class="flex-row" id="tasks-container">
+                <div ondrop="moveTo('to-do');"
+                    ondragover="allowDrop(event);"
+                    class="task-status-container flex-column">
+                    <div class="task-column-header">
+                        <div class="flex-row align-task-column-header">
+                            <h2>To do</h2>
+                            <img class="hover-white-button" src="src/img/plus-button.svg"
+                                onclick="openAddTask('to-do')">
+                        </div>
+                    </div>
+                    <div class="task-container flex-column" id="board-to-do">
+
+                    </div>
+                </div>
+
+                <div ondrop="moveTo('in-progress');"
+                    ondragover="allowDrop(event);"
+                     class="task-status-container flex-column">
+                    <div class="task-column-header flex-row">
+                        <div class="flex-row align-task-column-header">
+                            <h2> In progress</h2>
+                            <img class="hover-white-button" src="src/img/plus-button.svg"
+                                onclick="openAddTask('in-progress')">
+                        </div>
+                    </div>
+                    <div class="task-container flex-column" id="board-in-progress">
+
+                    </div>
+                </div>
+
+                <div ondrop="moveTo('awaiting-feedback');"
+                    ondragover="allowDrop(event);"
+                    class="task-status-container flex-column">
+                    <div class="task-column-header flex-row">
+                        <div class="flex-row align-task-column-header">
+                            <h2>Awaiting feedback</h2>
+                            <img class="hover-white-button" src="src/img/plus-button.svg"
+                                onclick="openAddTask('awaiting-feedback')">
+                        </div>
+                    </div>
+                    <div class="task-container flex-column" id="board-awaiting-feedback">
+
+                    </div>
+                </div>
+
+                <div ondrop="moveTo('done');"
+                    ondragover="allowDrop(event);"
+                    class="task-status-container flex-column mobile-margin-btm">
+                    <div class="task-column-header flex-row">
+                        <div class="flex-row align-task-column-header">
+                            <h2>Done</h2>
+                            <img class="hover-white-button" src="src/img/plus-button.svg" onclick="openAddTask('done')">
+                        </div>
+                    </div>
+                    <div class="task-container flex-column" id="board-task-done">
+
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <div id="mobile_sidebar_includer" w3-include-html="src/templates/sidebar-mobile.html"></div>
+
+</body>
+
+</html>

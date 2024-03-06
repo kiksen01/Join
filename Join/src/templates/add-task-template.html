@@ -1,0 +1,93 @@
+<span class="sectionHeaderMenu">Add Task</span>
+<div class="add-task-container">
+    <div class="left-fill-out-form">
+        <div>
+            <div class="form-div">
+                <span>Title</span>
+                <input onclick="initial()" required id="title" maxlength="30" class="title-input" type="text" placeholder="Enter a title">
+                <div id="titleValidationText" class="d-none validation-text">Please fill in the text form</div>
+            </div>
+            <div class="form-div">
+                <span>Description</span>
+                <textarea onclick="initial()" required id="description" maxlength="115" class="desc-input" type="text"
+                placeholder="Enter a Description"></textarea>
+                <div id="descValidationText"  class="d-none validation-text">Please fill in the text form</div>
+            </div>
+            
+            <div class="form-div">
+                <span>Category</span>
+                <div onclick="openCategories(),resetCategoryText(), event.stopPropagation()" id="category" class="category-dropdown-div cursor">
+                    <div id="selectedCategory">Select a Category</div>
+                    <img class="cursor mobile-dropdown-opener" src="src/img/dropdown-arrow.svg">
+                </div>
+                <div class="d-none" id="showCat">
+                    <div class="cat">New Category</div>
+                </div>
+                <div id="catValidationText"  class="d-none validation-text">Please choose a category</div>
+            </div>
+            <div class="form-div" id="assingedContactForm">
+                <span>Assigned to</span>
+                <div onclick="openAssignedTo('showAssigned', 'assigned'), event.stopPropagation()" id="assigned" class="assigned-dropdown-div cursor">
+                    <div id="assignedPeople">Assigned to</div>
+                    <img  class="cursor mobile-dropdown-opener" src="src/img/dropdown-arrow.svg">
+                </div>
+                <div class="d-none" id="showAssigned">
+                    
+                </div>
+                <div class="contact-bubble-container">
+                    <div id="renderContactBubbles">
+                    </div>
+                    <div id="renderContinousContactBubbles">
+
+                    </div>
+                </div>
+                <div id="assignedValidationText"  class="d-none validation-text">Please assign the Task</div>
+            </div>
+
+        </div>
+        <div>
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+    <div class="line"></div>
+    
+    <div class="right-fill-out-form">
+        <div class="form-div">
+            <span>Due Date</span>
+            <input onclick="initial()" id="dueDate" class="title-input" type="date" required min="" onkeydown="return false">
+            <div id="dateValidationText"  class="d-none validation-text">Please set a date</div>
+        </div>
+        <div class="form-div">
+            <span>Prio</span>
+            <div class="prio-container">
+                <button onclick="selectedPrio(0)" class="prio-input" id="urgent">Urgent
+                    <img id="img-urgent" src="src/img/urgent.svg" alt="">
+                </button>
+                <button onclick="selectedPrio(1)" class="prio-input" id="medium">Medium
+                    <img id="img-medium" src="src/img/medium.svg" alt="">
+                </button>
+                <button onclick="selectedPrio(2)" class="prio-input" id="low">Low
+                    <img id="img-low" src="src/img/low.svg" alt="">
+                </button>
+                
+            </div>
+            <div id="prioValidationText"  class="d-none validation-text">Choose a priority</div>
+        </div>
+        <div class="form-div">
+            <span>Subtasks</span>
+            <input onkeydown="deleteSubtaskInput()" maxlength="30" onfocusout="onSubtaskFocusOut()" onfo id="subtask-content" class="title-input" type="text" placeholder="Add new subtask">
+            <img src="src/img/delete-icon.svg" onclick="emptySubtaskText()" class="delete-icon-x d-none" id="deleteSubTaskTextId">
+            <img onclick="displaySubTask()" class="plus-icon cursor" src="src/img/plus.svg" alt="">
+        </div>
+        <div class="subtask-display-content" id="displaySub">
+
+        </div>
+        <div class="submit-btn-container">
+            <button onclick="clearAddTask()" class="cancel-btn">Clear</button>
+            <button onclick="createTask()" class="create-btn" id="create-task-button">Create Task</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div id="header" class="header flex-row box-shadow">
+    <div class="header_left">
+        <span class="header_text">Kanban Project Management Tool</span>
+    </div>
+    <div class="header_right flex-row">
+        <i id="help_link" class='bx bx-question-mark curser' onclick="toggleHelp()"></i>
+        <img class="profil_img curser" src="src/img/profile-picture.png" alt=""
+            onclick="stopPropagation(event); openHeaderMenu()">
+    </div>
+    <a id="header_menu" class="curser d-none" onclick="stopPropagation(event); logout()">Log out</a>
+</div>
