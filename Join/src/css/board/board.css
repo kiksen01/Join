@@ -350,9 +350,7 @@
 }
 
 .delete-and-edit-task {
-    position: sticky;
-    bottom: 30px;
-    right: 30px;
+    position: relative;
     width: 100%;
     justify-content: end;
 }
@@ -405,6 +403,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 10px;
 }
 
 .popup-urgency {
@@ -471,9 +470,9 @@
     border-radius: 10px;
     height: 50px;
     width: 100px;
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
+    position: relative;
+    bottom: 15px;
+    left: 350px;
     display: flex;
     align-items: center;
     justify-content: center;

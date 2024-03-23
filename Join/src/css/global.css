@@ -21,6 +21,7 @@ body {
     scroll-behavior: smooth;
     background-color: var(--white2-color);
     overflow: hidden;
+    user-select: none;
 }
   
 .flex-row {
