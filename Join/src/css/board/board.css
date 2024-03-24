@@ -350,6 +350,7 @@
 }
 
 .delete-and-edit-task {
+    display: flex;
     position: relative;
     width: 100%;
     justify-content: end;

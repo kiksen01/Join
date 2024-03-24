@@ -162,7 +162,7 @@ function generatePopUpHTML(clickedElement, index){
         <div class="flex-column" id="task-popup-contacts">
         
         </div>
-        <div class="flex-row delete-and-edit-task">
+        <div class="delete-and-edit-task">
             <div onclick="deletePopupTask(${index})" class="delete-button hover-white-button mobile-edit-and-delete cursor" > 
                 <img src="src/img/delete-task.svg">
             </div>
